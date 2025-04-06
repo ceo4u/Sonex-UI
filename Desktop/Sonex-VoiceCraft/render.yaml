@@ -1,0 +1,26 @@
+services:
+  # Frontend service
+  - type: web
+    name: sonex-voicecraft-frontend
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_API_URL
+        value: https://sonex-voicecraft-backend.onrender.com
+
+  # Backend service
+  - type: web
+    name: sonex-voicecraft-backend
+    env: node
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm start
+    envVars:
+      - key: PORT
+        value: 3001
+      - key: NODE_ENV
+        value: production

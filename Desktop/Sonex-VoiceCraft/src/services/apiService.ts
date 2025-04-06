@@ -1,9 +1,12 @@
 
 import axios from 'axios';
 
+// Get the API URL from environment variables or use a default
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+
 // Create an Axios instance with the backend base URL
 const apiClient = axios.create({
-  baseURL: 'https://sonex-voice-api-n7v3.onrender.com',
+  baseURL: API_URL,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -23,11 +26,11 @@ export const fetchHealth = async (): Promise<any> => {
 // Function to synthesize speech
 export const synthesizeSpeech = async (text: string, speakerId: number = 1): Promise<string> => {
   try {
-    const response = await apiClient.post('/synthesize', 
+    const response = await apiClient.post('/synthesize',
       { text, speaker_id: speakerId },
       { responseType: 'blob' }
     );
-    
+
     // Create a blob URL from the response for audio playback
     const audioBlob = new Blob([response.data], { type: 'audio/mpeg' });
     return URL.createObjectURL(audioBlob);
@@ -52,5 +55,5 @@ export const cloneVoice = async (formData: FormData): Promise<any> => {
 
 // Function to download generated audio by filename
 export const downloadAudio = (filename: string): string => {
-  return `https://sonex-voice-api-n7v3.onrender.com/api/download/${filename}`;
+  return `${API_URL}/api/download/${filename}`;
 };
