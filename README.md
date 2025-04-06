@@ -1,4 +1,4 @@
-Sonex VoiceCraft
+
 Sonex VoiceCraft is a text-to-speech application that allows users to generate speech from text using various voices and languages.
 
 Project info
