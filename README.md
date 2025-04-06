@@ -60,8 +60,8 @@ What technologies are used for this project?
 
 This project is built with:-
 
-Vite
-TypeScript
-React
-shadcn-ui
+Vite ,
+TypeScript ,
+React,
+shadcn-ui,
 Tailwind CSS
