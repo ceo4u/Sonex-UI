@@ -1,0 +1,13 @@
+{
+  "name": "sonex-voicecraft-root",
+  "version": "1.0.0",
+  "description": "Root package for Sonex VoiceCraft project",
+  "scripts": {
+    "start": "cd Desktop/Sonex-VoiceCraft && npm start",
+    "build": "cd Desktop/Sonex-VoiceCraft && npm run build",
+    "install": "cd Desktop/Sonex-VoiceCraft && npm install"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
