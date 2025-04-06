@@ -1,1 +1,1 @@
-web: cd server && npm start
+web: cd Desktop/Sonex-VoiceCraft/server && npm start

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Navigate to project directory
+cd Desktop/Sonex-VoiceCraft
+
 # Install frontend dependencies
 echo "Installing frontend dependencies..."
 npm install
@@ -13,7 +16,7 @@ echo "Installing backend dependencies..."
 cd server
 npm install
 
-# Return to root directory
+# Return to project directory
 cd ..
 
 echo "Build completed successfully!"
